@@ -19,3 +19,6 @@ I have created an online chess game, involving a chessboard and chess pieces, th
 docker-compose  build
 docker-compose  up
 ```
+# Login credentials
+
+Please refer users.json file
