@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{%block title%} My Completed Matches{% endblock %}
+
+{% block body %}
+  <div class="container mt-4">
+    <h2>Your Completed Games</h2> <br>
+    <div class="container" class="container align-items-stretch" style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline;">
+      {% for room in completed %}
+        <div class="card border-primary m-1" style="width: 250px">
+          <div class="card-body">
+            <h6 class="card-text">Against: {{room.opponent.username}}</h6>
+            <h6 class="card-text">You Played as {{room.side }}</h6>
+            <h6 class="card-text">Result: {{room.result}}</h6>
+          </div>
+        </div>
+      {% empty %}
+        <p>You have not Completed any Games! </p> 
+        <a class="btn btn-secondary mx-2" href="/create" role="button">Create &raquo;</a>
+      {% endfor %}
+    </div> 
+  </div>
+
+{% endblock %}

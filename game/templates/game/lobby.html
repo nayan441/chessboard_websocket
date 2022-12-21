@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{%block title%}Lobby{% endblock %}
+{% block body %}
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Infinity Chess <img class="mb-1" alt="" width="100" height="100" src="/static/chess.png"></h1> 
+      <p>Welcome to Infinity Chess, Play real-time multiplayer chess with your friends </p>
+      <p><a class="btn btn-primary btn-lg" href="/create" role="button">Create a Game &raquo;</a></p>
+    </div>
+  </div>
+
+{% for i in public %}
+<div>{{i}}</div>
+
+{%  endfor %}
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <h2>View Ongoing Games</h2>
+        <p>View games that you still haven't completed yet</p>
+        <p><a class="btn btn-secondary" href="/ongoing" role="button">View &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>View Completed Games</h2>
+        <p>View games that you've completed</p>
+        <p><a class="btn btn-secondary" href="/completed" role="button">View &raquo;</a></p>
+      </div>
+    </div> 
+    <hr>
+  </div>  
+      
+
+{% endblock %}

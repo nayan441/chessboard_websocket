@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{%block title%}Ongoing Games{% endblock %}
+  
+
+{% block body %}
+
+  <div class="container mt-4">
+    <h2>Your Games in Progress</h2> <br>
+    <div class="container" class="container align-items-stretch" style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline;">
+      {% for room in ongoing %}
+        <div class="card border-primary m-1" style="width: 250px">
+          <div class="card-body">
+            <h6 class="card-text">Against: {{room.opponent.username}}</h6>
+            <h6 class="card-text">You're Playing as {{room.side | title}}</h6>
+            <a type="button" class="btn btn-lg btn-block btn-primary" href="{{ room.link }}">Continue</a>
+          </div>
+        </div>
+      {% empty %}
+        <p>You do not have any Ongoing Games! </p> <a class="btn btn-secondary mx-2" href="/create" role="button">Create &raquo;</a>
+      {% endfor %}
+    </div> 
+  </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{%block title%}Create Game{% endblock %}
+
+
+{% block body %}
+  <div class="container mt-5 offset-2 col-8">
+      <div>
+        <form class="" action="{% url 'create' %}" method="POST">
+          {% csrf_token %} 
+          
+            <div class="col-12 p-2">
+              <label for="side" class="form-label">Username</label>
+              <span class="input-group-text">@</span>
+              <select class="custom-select" id="username" name="username" required>
+                {% for i in players %}
+                <option value={{i}}>{{i}}</option>.
+                
+                {% empty %}
+                <option value="nouser">No player online</option>
+
+                {%  endfor %}
+              </select>
+            </div>
+            <button class="btn btn-primary m-3" type="submit">Create Game</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

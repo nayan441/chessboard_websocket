@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    ports:
+      - 8040:8040
+    volumes:
+      - .:/app
+    command: python3 manage.py runserver 0.0.0.0:8000
+
