@@ -22,31 +22,3 @@ class Game(models.Model):
     
     def __str__(self):
         return f"Game {self.id} -> {self.owner} vs {self.opponent}"
-
-
-from django.contrib.auth.models import User
-from faker import Faker
-
-fakegen= Faker()
-
-def populate(N=5):
-    with open("users.json",'a', encoding = 'utf-8') as f:
-        for entry in range(N):
-            fakename = fakegen.name()
-            username = fakename.replace(" ","")
-            fake_name= fakename.split()
-            fake_first_name = fake_name[0]
-            fake_last_name = fake_name[1]
-            fake_email= fakegen.email()
-            f.write("{'username':'%s', 'password':'Qwerty@12345', 'email':'%s'},\n"% (username,fake_email))
-            print(fakename, fake_email)
-            try:
-                user = User.objects.get_or_create(username= username, first_name = fake_last_name,
-                                last_name= fake_last_name,email = fake_email, password="Qwerty@12345")[0]
-            except:
-                pass
-
-# populate(10)
-if __name__ == '__main__':
-    print('populating databases......................')
-    print('populated')
