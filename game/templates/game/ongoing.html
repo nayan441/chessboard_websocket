@@ -10,7 +10,9 @@
     <div class="container" class="container align-items-stretch" style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline;">
       {% for room in ongoing %}
         <div class="card border-primary m-1" style="width: 250px">
-          <div class="card-body">
+          <div class="card-body">.
+
+            <h6 class="card-text">Game ID: {{room.game_id}}</h6>
             <h6 class="card-text">Against: {{room.opponent.username}}</h6>
             <h6 class="card-text">You're Playing as {{room.side | title}}</h6>
             <a type="button" class="btn btn-lg btn-block btn-primary" href="{{ room.link }}">Continue</a>

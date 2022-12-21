@@ -50,6 +50,8 @@ def ongoing(request):
     g = Game.objects.all().filter(Q(owner=request.user) | Q(opponent=request.user)).filter(status=2)
     for i in g:
         x = {}
+        x["game_id"] = i.id
+
         if i.owner == request.user:
             x["opponent"] = i.opponent
             x["side"] = i.owner_side
@@ -120,6 +122,7 @@ def completed(request):
     for i in g:
         x = {}
         x["result"] = ""
+        x["game_id"] = i.id
 
         if i.owner == request.user:
             x["opponent"] = i.opponent

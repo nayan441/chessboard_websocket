@@ -9,6 +9,7 @@
       {% for room in completed %}
         <div class="card border-primary m-1" style="width: 250px">
           <div class="card-body">
+            <h6 class="card-text">Game ID: {{room.game_id }}</h6>
             <h6 class="card-text">Against: {{room.opponent.username}}</h6>
             <h6 class="card-text">You Played as {{room.side }}</h6>
             <h6 class="card-text">Result: {{room.result}}</h6>
