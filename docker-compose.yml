@@ -6,6 +6,9 @@ services:
     ports:
       - 8040:8040
     volumes:
-      - .:/app
+      - /home/zec/chess_board_21Dec/chessboard_folder:/app
     command: python3 manage.py runserver 0.0.0.0:8040
+
+
+    
 
