@@ -22,12 +22,12 @@ docker-compose  up
 # Login credentials
 
 Please refer users.json file
-
+<!-- 
 # ER Diagram
 ![Er_diagram_chess_board](https://user-images.githubusercontent.com/81521780/208927039-947da2d4-fbbd-430f-9a41-7b91b1d635df.png)
 
 # Class Diagram
-![class_diagram_chess drawio](https://user-images.githubusercontent.com/81521780/208993411-7273f2b8-7fd4-4de3-8174-546ad7b8e51d.png)
+![class_diagram_chess drawio](https://user-images.githubusercontent.com/81521780/208993411-7273f2b8-7fd4-4de3-8174-546ad7b8e51d.png) -->
 
 
 
